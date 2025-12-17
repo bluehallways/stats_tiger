@@ -34,7 +34,7 @@ brew install stats
 Legacy version for older systems could be found [here](https://mac-stats.com/downloads).
 
 ## Requirements
-Stats is supported on the released macOS version starting from macOS 10.15 (Catalina).
+Stats is supported on the released macOS version starting from macOS 10.13 (High Sierra).
 
 ## Features
 Stats is an application that allows you to monitor your macOS system.
