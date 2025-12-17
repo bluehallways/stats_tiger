@@ -64,6 +64,8 @@ int main(int argc, const char * argv[]) {
 - Force unwrap `!` → No nil-checking needed (would crash anyway)
 - Swift `.isEmpty` → Objective-C `[array count] > 0`
 - Range syntax `[0...(count-5)]` → `NSMakeRange(0, count-4)`
+  - Swift's closed range `0...(count-5)` includes indices 0 through (count-5) = (count-4) elements
+  - NSMakeRange uses (location, length) format, so length is (count-4)
 - Dot syntax `.shared` → Message syntax `[NSWorkspace sharedWorkspace]`
 
 ---

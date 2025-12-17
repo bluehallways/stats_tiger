@@ -62,8 +62,10 @@ We've converted the **smallest, most isolated component** as a demonstration:
 |---------------|---------------|---------------------|
 | **String methods** | `bundleId.replacingOccurrences(of:with:)` | `[bundleId stringByReplacingOccurrencesOfString:withString:]` |
 | **Class methods** | `NSRunningApplication.runningApplications(withBundleIdentifier:)` | `[NSRunningApplication runningApplicationsWithBundleIdentifier:]` |
-| **Array slicing** | `pathComponents[0...(count - 5)]` | `[pathComponents subarrayWithRange:NSMakeRange(0, count - 4)]` |
+| **Array slicing** | `pathComponents[0...(count - 5)]` | `[pathComponents subarrayWithRange:NSMakeRange(0, count - 4)]` * |
 | **Singleton access** | `NSWorkspace.shared` | `[NSWorkspace sharedWorkspace]` |
+
+\* Note: Swift's closed range `0...(count-5)` includes indices from 0 to (count-5) inclusive, which is (count-4) elements total. NSMakeRange uses (start, length) format, so it becomes NSMakeRange(0, count-4).
 | **Protocol with closures** | `func version(completion: @escaping (String) -> Void)` | `- (void)versionWithCompletion:(void (^)(NSString *))completion;` |
 | **Struct** | `public struct Popup_c_s { let width: CGFloat = 264 }` | `@interface PopupConstants : NSObject @property (readonly) CGFloat width; @end` |
 | **Enum** | `enum ModuleType: Int { case CPU }` | `typedef NS_ENUM(NSInteger, ModuleType) { ModuleTypeCPU };` |

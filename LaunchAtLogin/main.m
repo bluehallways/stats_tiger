@@ -26,7 +26,8 @@ int main(int argc, const char * argv[]) {
         NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
         NSArray *pathComponents = [bundlePath pathComponents];
         
-        // Go up 5 levels from the LaunchAtLogin bundle to get the main app path
+        // Go up 4 levels from the LaunchAtLogin bundle to get the main app path
+        // (Swift's 0...(count-5) is a closed range = count-4 elements)
         NSUInteger count = [pathComponents count];
         NSArray *mainPathComponents = [pathComponents subarrayWithRange:NSMakeRange(0, count - 4)];
         NSString *mainPath = [NSString pathWithComponents:mainPathComponents];
