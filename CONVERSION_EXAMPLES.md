@@ -46,7 +46,8 @@ int main(int argc, const char * argv[]) {
         NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
         NSArray *pathComponents = [bundlePath pathComponents];
         
-        // Go up 5 levels from the LaunchAtLogin bundle to get the main app path
+        // Go up 4 levels from the LaunchAtLogin bundle to get the main app path
+        // (Swift's 0...(count-5) is a closed range = count-4 elements)
         NSUInteger count = [pathComponents count];
         NSArray *mainPathComponents = [pathComponents subarrayWithRange:NSMakeRange(0, count - 4)];
         NSString *mainPath = [NSString pathWithComponents:mainPathComponents];
@@ -338,8 +339,9 @@ NSString *NSStringFromModuleType(ModuleType type) {
 | File | Swift Lines | Objective-C Lines | Files | Increase |
 |------|-------------|-------------------|-------|----------|
 | LaunchAtLogin | 26 | 40 | 1 → 1 | +54% |
-| HelperProtocol | 24 | 63 | 1 → 1 | +163% |
-| Constants | 87 | 206 | 1 → 2 | +137% |
+| HelperProtocol | 24 | 61 | 1 → 1 | +154% |
+| Constants | 87 | 270 (93 .h + 177 .m) | 1 → 2 | +210% |
+| **Total** | **137** | **371** | **3 → 4** | **+171%** |
 
 **Why Objective-C is larger:**
 - Header/implementation split
@@ -377,7 +379,7 @@ NSString *name = NSStringFromModuleType(module);  // @"CPU"
 The conversions demonstrate that:
 1. ✅ Swift can be mechanically translated to Objective-C
 2. ✅ Most patterns have clear equivalents
-3. ⚠️ Code becomes more verbose (average +126% size)
+3. ⚠️ Code becomes more verbose (average +171% size)
 4. ⚠️ Requires creating header files
 5. ❌ Still uses modern APIs incompatible with Mac OS X 10.4
 

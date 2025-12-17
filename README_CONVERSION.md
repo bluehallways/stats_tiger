@@ -8,7 +8,7 @@ This branch contains a proof-of-concept conversion of Stats from Swift to Object
 **Main conversion documentation**
 - Overview of the conversion approach
 - List of files converted
-- Conversion statistics (137 lines Swift → 309 lines Objective-C)
+- Conversion statistics (137 lines Swift → 371 lines Objective-C)
 - Step-by-step process
 - What would be required for full conversion
 - Realistic path forward
@@ -68,8 +68,8 @@ This branch contains a proof-of-concept conversion of Stats from Swift to Object
 |--------|-------|
 | Swift files converted | 3 of 108 (2.8%) |
 | Swift lines converted | 137 of 34,595 (0.4%) |
-| Objective-C lines created | 309 |
-| Code size increase | +126% |
+| Objective-C lines created | 371 |
+| Code size increase | +171% |
 | Time to convert 3 files | ~1 hour |
 | Estimated time for full conversion | 3-6 months |
 

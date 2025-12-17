@@ -37,10 +37,10 @@ We've converted the **smallest, most isolated component** as a demonstration:
 - `LaunchAtLogin/main.swift` → `LaunchAtLogin/main.m` (26 lines → 40 lines)
 
 **2. SMC Helper Protocol**
-- `SMC/Helper/protocol.swift` → `SMC/Helper/HelperProtocol.h` (24 lines → 63 lines)
+- `SMC/Helper/protocol.swift` → `SMC/Helper/HelperProtocol.h` (24 lines → 61 lines)
 
 **3. Kit Constants**
-- `Kit/constants.swift` → `Kit/Constants.h` + `Kit/Constants.m` (87 lines → 206 lines)
+- `Kit/constants.swift` → `Kit/Constants.h` + `Kit/Constants.m` (87 lines → 270 lines: 93 .h + 177 .m)
 
 **Changes Made:**
 1. Created Objective-C versions of three independent components
@@ -152,16 +152,16 @@ Expected result: The LaunchAtLogin helper should compile successfully as Objecti
 **Total Swift Code in Project:** 34,595 lines across 108 files
 
 **Converted to Objective-C:**
-- 3 Swift files (137 Swift lines → 309 Objective-C lines)
+- 3 Swift files (137 Swift lines → 371 Objective-C lines)
 - Approximately 0.4% of total codebase
 
 **Breakdown:**
 | Component | Swift Lines | Objective-C Lines | Increase |
 |-----------|-------------|-------------------|----------|
 | LaunchAtLogin/main | 26 | 40 | +54% |
-| SMC Helper Protocol | 24 | 63 | +163% |
-| Kit Constants | 87 | 206 | +137% |
-| **TOTAL** | **137** | **309** | **+126%** |
+| SMC Helper Protocol | 24 | 61 | +154% |
+| Kit Constants | 87 | 270 (93 .h + 177 .m) | +210% |
+| **TOTAL** | **137** | **371** | **+171%** |
 
 Note: Objective-C typically requires more lines due to:
 - Explicit header/implementation file split
